@@ -1,5 +1,5 @@
 fun main() {
-    println(agoToText((49 * 3600))) //функция, которая принимает параметром Int (секунды)
+    println(agoToText((24 * 60))) //функция, которая принимает параметром Int (секунды)
     // возвращает String (был(а) в сети тогда-то)
 }
 
@@ -17,7 +17,7 @@ fun agoToText(timeAgo: Int): String {
 //функция определяет оконание слова "минута" в зависимости от timeAgo
 fun isMinutAgo(timeAgo: Int): String {
     return if (((timeAgo / 60) % 10 == 1 && (timeAgo / 60) % 100 != 11)) "минуту"
-    else if (((timeAgo / 60) % 10 in 2..4) &&  ((timeAgo / 60) % 10 !in 12..14)) "минуты"
+    else if (((timeAgo / 60) % 10 in 2..4) &&  ((timeAgo / 60) % 100 !in 12..14)) "минуты"
     else "минут"
 }
 
