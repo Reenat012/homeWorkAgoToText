@@ -17,7 +17,7 @@ fun agoToText(timeAgo: Int): String {
 //функция определяет оконание слова "минута" в зависимости от timeAgo
 fun isMinutAgo(timeAgo: Int): String {
     return if (((timeAgo / 60) % 10 == 1 && (timeAgo / 60) % 100 != 11)) "минуту"
-    else if (((timeAgo / 60) % 10 == 2)) "минуты"
+    else if (((timeAgo / 60) % 10 in 2..4) &&  ((timeAgo / 60) % 10 !in 12..14)) "минуты"
     else "минут"
 }
 
